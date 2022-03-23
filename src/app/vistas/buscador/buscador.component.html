@@ -1,0 +1,16 @@
+<div class="form-group">
+    <form class="d-flex">
+            <div class="form-field mx-3 ">
+                <input type="text" class="form-control" placeholder="Buscar imagen" [formControl]="inputSearch">
+            </div>
+            <div class="form-field">
+                <datalist id="categorias">
+                    <option value="ciencia"></option>
+                    <option value="educacion"></option>
+                    <option value="gente"></option>
+                    <option value="sentimientos"></option>
+                </datalist>
+                <input class="form-control" placeholder="Categoria" list="categorias" name="categorias" type="text" [formControl]="inputSearchCategoria">
+            </div>
+    </form>
+</div>

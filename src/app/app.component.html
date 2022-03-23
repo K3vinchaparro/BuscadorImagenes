@@ -1,0 +1,30 @@
+<div class="navbar navbar-light bg-light py-3">
+  <div class="container">
+    <div class="container-fluid row px-5">
+      <div class="col-xl-8 col">
+      <a class="navbar-brand titulo " href="/">Buscador de <b>imagenes</b></a>
+      </div>
+      <div class="col-xl-4 col">
+        <app-buscador (submitted)="onSearch($event, $event)"></app-buscador>
+      </div>
+  </div>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="row">
+    <ng-container *ngFor="let imagen of imagenes$ | async">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+        <div class="card card-derk shadow p-3 mb-5 bg-white rounded hover" style="width: 18rem;">
+          <div class="details">
+            <div class="center">
+              <p><img src="https://img.icons8.com/ios-filled/10/000000/like--v1.png"/>{{imagen.likes}}</p>
+              <p><img src="https://img.icons8.com/pastel-glyph/10/000000/surprise--v1.png"/>{{imagen.views}}</p>
+            </div>
+          </div>
+          <app-imagen [imagen]="imagen"></app-imagen> 
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<router-outlet></router-outlet>
